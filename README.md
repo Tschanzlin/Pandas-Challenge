@@ -1,14 +1,27 @@
 # Pandas-Challenge
 
 General notes:
+- Given the length of file and number of cells, I chose to use a "#" to de-activate many of the check functions I used at the end of each cell, except where the final output was rendered
 - I would have rather done this exercise in Python
-- I found the grouping and data manipulation in Panda to be far too complex and cumbersome, but I know that my approach may have been on of the least efficient ways to manipulate the data
+- I found that the approach I used in Panda to group and manipulate the data was far too complex and cumbersome for this exercise, but I'm certain there is an easier way to do this.
+- I considered three ways to create the school district summary data:
+> Using list comprehension to read through the columns and calculate averages
+> Creating loops in python to run the calculations
+> Using ".loc" to filter the dataframes by passing grades > 70
+> Using the grouping functions to group and filter datafiles, and then re-assemble into a final ouptut file
+- I wasn't able to use the ".loc" function to filter, getting a string / int error, despite confirming the math_score and reading_score columns were number datatypes
+- Ultimately, I used the last version as I wasn't sure how to use the list comprehension function on a large datafile, and in the case of Panda, wasn't sure i could re-assemble the data into dataframes without manually creating a dictionary for each school
+- Realize now that the easiest approach is to create a dictionairy for each column where the key is the school name, and the value is the variable for the particular series ("School Type", "Total Students", etc.). Still trying to determine whether each series would need to be indexed to the school_name.  I believe this is the case.  Once dictionaries are created, then it's simply a matter of making a new dataframe assembling all of the dictionairies.
+
 
 Clean-up Items:
 - Add 'School type' to schoolsum data
 - Format data using the map function
 - Format and organize column headers
+- Go back and see if there's a simpler way to assemble the first row of data
 
+7/12:
+- Lightbulb moment - calculated values stored as a dictionary.  Set index to "school_name" to create dictionary with school names as keys and individual series values  referenced to the school 
 
 Late 7/11:
 - Use MathPass, ReadPass, and TotPass datafiles to count passsing students, grouped by school to create total count values for each one of those datasets 
