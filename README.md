@@ -21,7 +21,7 @@ All required values for each of the tables calculate correctly.  However, there 
 
 Notes:
 7/12:
-- Lightbulb moment - calculated values stored as a dictionary.  Set index to "school_name" to create dictionary with school names as keys and individual series values referenced to the school 
+- Lightbulb moment - calculated values stored as a dictionary; set index to "school_name" to create dictionary with school names as keys and individual series values referenced to the school 
 - Summary chart complete and calculated correctly
 
 Late 7/11:
@@ -29,19 +29,18 @@ Late 7/11:
 - Form dataframes and concatenate
 
 7/11:
--For school summary data:
-> Create master group by file, grouped by school name
-> Create df using mean function to determine avg size, budget, reading / math score
-> Create df using loc function to calculate % passing when grades > 70 (not working)
-- Created sub-sets of the original dataframe filtered by math and reading scores >=70 and then ran count and average scores off that
-- For total passing stats, I assumed students had to path mass and reading, and so ran the analysis by filter ReadPass further by passing math scores
+- Created master group by file, grouped by school name
+- Created df using mean function to determine avg size, budget, reading / math score
+- Created df using loc function to calculate % passing when grades > 70 (not working)
+- Created grouped dataframes from filtered dataframes for passing scores to run count and average scores
+- Total passing stats = ReadPass dataframe (reading >=70), filtered further by passing math scores
 
 7/10:
-- Building basic outline of the analysis
 - Imported schools and students datafiles; evaulated format
-- Merged files in order to calculate student scores by district (may not need be necessaery)
+- Merged files in order to calculate student scores by district (may not need)
 - Calculated basic stats (Totals and Averages) for the total district
-- Unable to calculate % passing with a single command (MathPass = students_df[students_df["reading_score"]>=70].count without returning contents of entire dataframe
+- Created filtered dataframes for passing scores >=70 to calc % passing data
+
 
 
 
